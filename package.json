@@ -1,0 +1,15 @@
+{
+  "name": "login-xp",
+  "version": "1.0.0",
+  "description": "Projeto de testes de login com Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cypress:test": "yarn cypress run",
+    "cypress:gui": "yarn cypress open"
+  },
+  "author": "Fernando Papito",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "12.5.1"
+  }
+}
