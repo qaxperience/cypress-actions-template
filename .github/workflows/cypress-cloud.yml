@@ -5,7 +5,7 @@ on:
     inputs:
       cli:
         description: Run by cypress command line
-        default: yarn cypress run
+        default: cypress/e2e/*
 jobs:
   cypress-e2e-electron:
     runs-on: ubuntu-latest
