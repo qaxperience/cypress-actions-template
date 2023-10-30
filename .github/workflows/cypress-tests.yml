@@ -1,0 +1,21 @@
+name: Cypress tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Run by cypress command line
+        default: yarn cypress run
+    
+jobs: 
+  cypress-electron-tests:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v4.0.0
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run E2E tests
+        run: ${{ github.event.inputs.cli }}
