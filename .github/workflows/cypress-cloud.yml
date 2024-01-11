@@ -1,7 +1,7 @@
 name: Cypress Cloud
 
 on:
-   workflow_dispatch:
+  workflow_dispatch:
     inputs:
       spec:
         description: Run by cypress command line
@@ -28,6 +28,12 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: 9b09827b-8007-49a1-9529-7443e123ec66
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add More Groups (During Wait Time)
+        run: |
+          sleep 30 # Aguarda 30 segundos
+          cypress run --tag <novo_nome_do_tag> --group <novo_nome_do_grupo> --ciBuildId 7483812733-20369650233
+
   cypress-e2e-chrome:
     needs: cypress-e2e-electron
     runs-on: ubuntu-latest
@@ -49,6 +55,12 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: 9b09827b-8007-49a1-9529-7443e123ec66
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add More Groups (During Wait Time)
+        run: |
+          sleep 30 # Aguarda 30 segundos
+          cypress run --tag <novo_nome_do_tag> --group <novo_nome_do_grupo> --ciBuildId 7483812733-20369650233
+
   cypress-e2e-firefox:
     needs: cypress-e2e-electron
     runs-on: ubuntu-latest
@@ -70,3 +82,8 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: 9b09827b-8007-49a1-9529-7443e123ec66
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add More Groups (During Wait Time)
+        run: |
+          sleep 30 # Aguarda 30 segundos
+          cypress run --tag <novo_nome_do_tag> --group <novo_nome_do_grupo> --ciBuildId 7483812733-20369650233
