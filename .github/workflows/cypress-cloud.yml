@@ -46,9 +46,7 @@ jobs:
           record: true
           group: UI Chrome
           spec: ${{ github.event.inputs.spec }}
-        env:
-          CYPRESS_RECORD_KEY: 9b09827b-8007-49a1-9529-7443e123ec66
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       
   cypress-e2e-firefox:
     needs: cypress-e2e-chrome
     runs-on: ubuntu-latest
@@ -67,6 +65,4 @@ jobs:
           record: true
           group: UI Firefox
           spec: ${{ github.event.inputs.spec }}
-        env:
-          CYPRESS_RECORD_KEY: 9b09827b-8007-49a1-9529-7443e123ec66
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
