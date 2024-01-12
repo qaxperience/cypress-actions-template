@@ -11,8 +11,8 @@ jobs:
   cypres-electron-tests:
     runs-on: ubuntu-latest
     container:
-       image: cypress/browsers:node.18.12.0-chrome103-ff107
-       options: --user 1001
+      image: cypress/browsers:node18.12.0-chrome103-ff107
+      options: --user 1001
     steps:
       - name: Get code
         uses: actions/checkout@v3.3.0
